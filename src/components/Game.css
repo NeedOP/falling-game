@@ -1,0 +1,115 @@
+/* Reset and base styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Circular, responsive falling images */
+.falling {
+  position: absolute;
+  width: 12vw;      /* responsive width relative to viewport */
+  max-width: 60px;  /* max size on large screens */
+  aspect-ratio: 1;  /* keep it square */
+  border-radius: 50%; /* circle */
+  cursor: pointer;
+  user-select: none;
+  transition: top 0.05s linear;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  object-fit: cover;
+}
+
+/* Hearts container */
+.hearts {
+  display: flex;
+  gap: 8px;
+  margin: 15px;
+}
+
+/* Hearts style */
+.hearts img {
+  width: 8vw;
+  max-width: 35px;
+  aspect-ratio: 1;
+}
+
+/* Score text */
+h2 {
+  margin-left: 15px;
+  font-size: 6vw;
+  max-font-size: 28px;
+}
+
+/* Game Over */
+.game-over {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 6vw;
+  max-font-size: 28px;
+  padding: 0 10px;
+}
+
+input[type="text"] {
+  font-size: 5vw;
+  max-font-size: 24px;
+  padding: 10px;
+  width: 70vw;
+  max-width: 300px;
+  margin: 15px 0;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+}
+
+button {
+  font-size: 5vw;
+  max-font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s ease;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.start-button {
+  display: block;
+  margin: 100px auto 0 auto;
+  width: 60vw;
+  max-width: 300px;
+}
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  .falling {
+    width: 50px;
+  }
+
+  .hearts img {
+    width: 30px;
+  }
+
+  h2, .game-over {
+    font-size: 28px;
+  }
+
+  input[type="text"], button {
+    font-size: 18px;
+  }
+}
