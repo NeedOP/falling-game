@@ -105,7 +105,7 @@ const Game: React.FC = () => {
     if (!playerName) return;
 
     try {
-      await fetch('https://your-render-url.onrender.com/api/scores', {
+      await fetch('https://falling-game-f14a450e5777.herokuapp.com/api/scores', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ playerName, score }),
@@ -125,7 +125,7 @@ const Game: React.FC = () => {
 
   const fetchLeaderboard = async () => {
     try {
-      const res = await fetch('http://localhost:8080/api/scores/top5');
+      const res = await fetch('https://falling-game-f14a450e5777.herokuapp.com/api/scores/top5');
       const data = await res.json();
       setLeaderboard(data);
     } catch (err) {

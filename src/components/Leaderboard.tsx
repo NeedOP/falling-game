@@ -5,7 +5,7 @@ const Leaderboard: React.FC = () => {
   const [scores, setScores] = useState<PlayerScore[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/scores')
+    fetch('https://falling-game-f14a450e5777.herokuapp.com/api/scores')
       .then(res => res.json())
       .then(data => setScores(data));
   }, []);
